@@ -1,0 +1,44 @@
+.button {
+    margin: 2px;
+    padding: 15px;
+    border-radius: 50%;
+    border: 0;
+    background-color: rgb(112, 142, 226);
+    color: white;
+    & p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 8px;
+        height: 8px;
+    }
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(131, 160, 241);
+        transform: 1s;
+    }
+    &_cebutton {
+        background-color: rgb(204, 60, 60);
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(241, 95, 95);
+            transform: 1s;
+        }
+    }
+    &_calculate {
+        background-color: rgb(204, 60, 144);
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(224, 103, 174);
+            transform: 1s;
+        }
+    }
+    &_operation {
+        background-color: rgb(156, 156, 156);
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(206, 206, 206);
+            transform: 1s;
+        }
+    }
+}

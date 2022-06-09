@@ -1,0 +1,33 @@
+.buttons {
+  display: inline-block;
+}
+
+.buttons__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.buttons__button {
+  margin: 2px;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.buttons__button p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 8px;
+  height: 8px;
+}
+
+.buttons__button:hover {
+  cursor: pointer;
+}

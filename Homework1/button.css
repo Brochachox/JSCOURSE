@@ -1,0 +1,62 @@
+.button {
+  margin: 2px;
+  padding: 15px;
+  border-radius: 50%;
+  border: 0;
+  background-color: #708ee2;
+  color: white;
+}
+
+.button p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 8px;
+  height: 8px;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #83a0f1;
+  -webkit-transform: 1s;
+          transform: 1s;
+}
+
+.button_cebutton {
+  background-color: #cc3c3c;
+}
+
+.button_cebutton:hover {
+  cursor: pointer;
+  background-color: #f15f5f;
+  -webkit-transform: 1s;
+          transform: 1s;
+}
+
+.button_calculate {
+  background-color: #cc3c90;
+}
+
+.button_calculate:hover {
+  cursor: pointer;
+  background-color: #e067ae;
+  -webkit-transform: 1s;
+          transform: 1s;
+}
+
+.button_operation {
+  background-color: #9c9c9c;
+}
+
+.button_operation:hover {
+  cursor: pointer;
+  background-color: #cecece;
+  -webkit-transform: 1s;
+          transform: 1s;
+}
