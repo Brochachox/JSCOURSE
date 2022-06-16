@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="page">
+        <div class="page__currency-exchanger currency-exchanger">
+            <div class="currency-exchanger__main">
+                <div class="currency-exchanger__item">
+                    <label for="uah-field" class="currency-exchanger__label">UAH:</label>
+                    <input type="number" class="currency-exchanger__field" name="uah-field">
+                </div>
+                <div class="currency-exchanger__item">
+                    <label for="currency-type-field" class="currency-exchanger__label">Валюта:</label>
+                    <input type="text" class="currency-exchanger__field currency-exchanger__field_currency-type"
+                        name="currency-type-field" value="">
+                </div>
+
+                <button class="currency-exchanger__button-calculate button">Розрахувати</button>
+
+                <div class="currency-exchanger__item">
+                    <label for="output-field" class="currency-exchanger__label"
+                        id="output-field-label">Результат</label>
+                    <input type="number" class="currency-exchanger__field currency-exchanger__field"
+                        name="output-field">
+                </div>
+                <p class="currency-exchanger__error-output"></p>
+
+            </div>
+            <div class="currency-exchanger__coefficients">
+                <div class="currency-exchanger__item">
+                    <label for="currency-1" class="currency-exchanger__label">USD</label>
+                    <input type="number" class="currency-exchanger__field currency-exchanger__field_field-coefficient"
+                        name="currency-1" value="35">
+                </div>
+                <div class="currency-exchanger__item">
+                    <label for="currency-1" class="currency-exchanger__label ">EUR</label>
+                    <input type="number" class="currency-exchanger__field currency-exchanger__field_field-coefficient"
+                        name="currency-1" value="0">
+                </div>
+                <div class="currency-exchanger__item">
+                    <label for="currency-1" class="currency-exchanger__label">GBP</label>
+                    <input type="number" class="currency-exchanger__field currency-exchanger__field_field-coefficient"
+                        name="
+                        currency-1" value="0">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
