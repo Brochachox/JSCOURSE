@@ -6,17 +6,27 @@ class Game {
     #stateArray = [];
     #isComplete = false;
     #output;
-    constructor(output, fieldSize = 3) {
+    constructor(fieldSize = 3) {
         this.fieldSize = fieldSize;
-        //this.#output = output;
-        this.#output = new output(fieldSize);
+        this.#stateArray = this.initStateArray(fieldSize);
+        this.#output = this.initOutput();
         this.#output.printMessage(`Player ${this.#playerFlag} turn:`);
-        for (let i = 0; i <= fieldSize - 1; i++) {
-            this.#stateArray[i] = [];
-            for (let j = 0; j <= fieldSize - 1; j++) {
-                this.#stateArray[i][j] = +0;
+
+    }
+    initStateArray(fieldSize) {
+        let arr = [];
+        for (let i = 0; i < fieldSize; i++) {
+            arr[i] = [];
+            for (let j = 0; j < fieldSize; j++) {
+                arr[i][j] = +0;
             }
         }
+        return arr.slice()
+    }
+    initOutput() {
+        let output = new HtmlOutput(this.fieldSize);
+        return output;
+
     }
     isValidCell(x, y) {
         if ((x <= this.fieldSize - 1) && (y <= this.fieldSize - 1) && (this.#stateArray[x][y] === 0)) {
@@ -45,7 +55,7 @@ class Game {
 
         } else if (this.#isComplete) {
 
-            this.#output.printMessage('The game is over!\nClick reset button');
+            this.#output.printMessage('Click reset button!');
         } else {
             this.#output.printMessage('Choice other cell');
         }
@@ -128,6 +138,10 @@ class HtmlOutput {
     #signs = ['', 'cross', 'zero'];
     constructor(fieldSize = 3) {
         this.#textOutput = document.querySelector(".text-output");
+        this.createField(fieldSize);
+
+    }
+    createField(fieldSize) {
         this.#field = document.querySelector(".field");
         this.#field.className = "";
         this.#field.classList.add('field');
@@ -162,15 +176,7 @@ class Input {
     #game;
     #fieldSize;
     constructor() {
-        document.querySelector('.settings').addEventListener('click', function () {
-            if (!document.querySelector('.settings-overlay').classList.contains('settings-overlay-visible')) {
-                document.querySelector('.settings-icon').classList.add('settings-icons-rotate');
-                document.querySelector('.settings-overlay').classList.add('settings-overlay-visible');
-            } else {
-                document.querySelector('.settings-overlay').classList.remove('settings-overlay-visible');
-                document.querySelector('.settings-icon').classList.remove('settings-icons-rotate');
-            }
-        });
+
         document.querySelector('.field-size-settings').addEventListener('change', (e) => {
             this.#fieldSize = +e.target.value;
             this.restart();
@@ -178,8 +184,12 @@ class Input {
             document.querySelector('.settings-icon').classList.remove('settings-icons-rotate');
         })
     }
+
+    elementSetClass(element, classToSet) {
+        document.querySelector(`.${element}`).classList.add(`.${classToSet}`);
+    }
     startGame() {
-        this.#game = new Game(HtmlOutput, this.#fieldSize);
+        this.#game = new Game(this.#fieldSize);
         document.querySelectorAll('.cell').forEach(cell => {
             cell.addEventListener('click', this.addSymbol
             )
@@ -196,7 +206,6 @@ class Input {
         this.startGame();
     }
 }
-
 
 
 
